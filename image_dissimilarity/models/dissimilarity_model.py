@@ -549,10 +549,10 @@ class ResNetDissimNetPrior(nn.Module):
         
         # all the other 1x1 convolutions
         if self.semantic:
-            self.conv7 = nn.Conv2d(1280, 512, kernel_size=1, padding=0)
-            self.conv8 = nn.Conv2d(640, 256, kernel_size=1, padding=0)
-            self.conv9 = nn.Conv2d(320, 128, kernel_size=1, padding=0)
-            self.conv10 = nn.Conv2d(160, 64, kernel_size=1, padding=0)
+            self.conv7 = nn.Conv2d(4352, 4, kernel_size=1, padding=0)
+            self.conv8 = nn.Conv2d(2176, 4, kernel_size=1, padding=0)
+            self.conv9 = nn.Conv2d(1088, 4, kernel_size=1, padding=0)
+            self.conv10 = nn.Conv2d(544, 4, kernel_size=1, padding=0)
             self.conv11 = nn.Conv2d(32, 2, kernel_size=1, padding=0)
         else:
             self.conv7 = nn.Conv2d(1024, 512, kernel_size=1, padding=0)
