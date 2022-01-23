@@ -598,11 +598,7 @@ class ResNetDissimNetPrior(nn.Module):
             layer2_cat = torch.cat((self.encoding_og[1], self.encoding_syn[1]), dim=1)
             layer3_cat = torch.cat((self.encoding_og[2], self.encoding_syn[2]), dim=1)
             layer4_cat = torch.cat((self.encoding_og[3], self.encoding_syn[3]), dim=1)
-        
-        print(layer4_cat.shape)
-        print(layer3_cat.shape)
-        print(layer2_cat.shape)
-        print(layer1_cat.shape)
+       
         # use 1x1 convolutions to reduce dimensions of concatenations
         layer4_cat = self.conv7(layer4_cat)
         layer3_cat = self.conv8(layer3_cat)
