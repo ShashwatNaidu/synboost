@@ -490,7 +490,7 @@ class ResNetDissimNet(nn.Module):
         return self.final_prediction
 
 class ResNetDissimNetPrior(nn.Module):
-    def __init__(self, architecture='resnet18', semantic=True, pretrained=True, correlation=True, prior = False, spade='',
+    def __init__(self, architecture='resnet101', semantic=True, pretrained=True, correlation=True, prior = False, spade='',
                  num_semantic_classes = 19):
         super(ResNetDissimNetPrior, self).__init__()
 
@@ -506,6 +506,7 @@ class ResNetDissimNetPrior(nn.Module):
             raise NotImplementedError()
             #self.encoder = VGGSPADE()
         else:
+            architecture = 'resnet101'
             self.encoder = resnet(architecture=architecture, pretrained=pretrained)
         
         if self.semantic:
